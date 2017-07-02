@@ -33,6 +33,14 @@
          
          
          .header { position: fixed; top: 0px; background-color: #fff; }
+
+         pre {
+             font-family: sans-serif;
+             padding: 1em;
+             border-radius: 0.8em;
+             white-space: pre-wrap;
+             word-wrap: break-word;
+         }
         </style>
         <script type="text/javascript" src="jquery.js"></script>
         <script type="text/javascript">
