@@ -45,7 +45,6 @@ Search tag <form action="showallbytag.php" method="get" style="display: inline">
     year:
     <select name="year">
         <option value="0">any</option>
-        <option value="2012">2012</option>
         <option value="2017">2017</option>
         <option value="2018">2018</option>
         <option value="2019">2019</option>
