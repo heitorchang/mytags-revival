@@ -99,7 +99,7 @@ if (isset($_GET['month']) and isset($_GET['year'])) {
 
 // echo("Dates: $date_start_sql to $date_end_sql <br><br>");
 
-$getPosts_sth = $dbh->prepare("SELECT id, date_format(date, '%d %b %Y %H:%i') as date_fmt, date, user, title, content, tags, dayname(date) as wkday FROM `post` WHERE `tags` LIKE :tagname AND (`title` LIKE :keyword OR `content` LIKE :keyword) AND date >= :date_start AND date < :date_end ORDER BY `date` DESC LIMIT $start, $numperpage");
+$getPosts_sth = $dbh->prepare("SELECT id, date_format(date, '%d %b %Y, %H:%i') as date_fmt, date, user, title, content, tags, dayname(date) as wkday FROM `post` WHERE `tags` LIKE :tagname AND (`title` LIKE :keyword OR `content` LIKE :keyword) AND date >= :date_start AND date < :date_end ORDER BY `date` DESC LIMIT $start, $numperpage");
 $getPosts_sth->bindParam(':tagname', $tagname);
 $getPosts_sth->bindParam(':keyword', $keyword);
 $getPosts_sth->bindParam(':date_start', $date_start_sql);

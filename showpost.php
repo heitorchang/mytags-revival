@@ -99,7 +99,7 @@ if (isset($_GET['month']) and isset($_GET['year'])) {
 
 // echo("Dates: $date_start_sql to $date_end_sql <br><br>");
 
-$getPosts_sth = $dbh->prepare("SELECT id, date_format(date, '%d %b %Y %H:%i') as date_fmt, date, user, title, content, tags, dayname(date) as wkday FROM `post` WHERE id = :id");
+$getPosts_sth = $dbh->prepare("SELECT id, date_format(date, '%d %b %Y, %H:%i') as date_fmt, date, user, title, content, tags, dayname(date) as wkday FROM `post` WHERE id = :id");
 $getPosts_sth->bindParam(':id', $_GET['id']);
 $getPosts_sth->execute();
 $getPosts_result = $getPosts_sth->fetchAll();
