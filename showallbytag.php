@@ -35,7 +35,7 @@ if ($page < 0 || !is_int($page)) {
   $page = 0;
 }
 
-$numperpage = 2;
+$numperpage = 1;
 $start = $page * $numperpage;
 
 echo "<h3>$tagname_get</h3>";
