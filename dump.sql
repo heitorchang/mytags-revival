@@ -70,26 +70,6 @@ CREATE TABLE IF NOT EXISTS `tag` (
 -- Dumping data for table `tag`
 --
 
-INSERT INTO `tag` (`id`, `name`) VALUES
-(1, 'java'),
-(2, 'php'),
-(3, 'ads'),
-(4, ''),
-(5, 'javascript'),
-(6, 'language'),
-(7, 'Forth'),
-(8, 'c++'),
-(9, 'pl/sql'),
-(10, 'haskell'),
-(11, 'google maps'),
-(12, 'gnu'),
-(13, 'maps'),
-(14, 'pdo'),
-(15, 'insert'),
-(16, 'explode'),
-(17, 'array'),
-(18, 'nettuts'),
-(19, 'tutorial');
 
 -- --------------------------------------------------------
 

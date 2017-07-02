@@ -23,7 +23,10 @@
 <a href="addform.php">New post</a> | 
 <a href="showallbytag.php">All posts</a> |
 <a href="tags.php">All tags</a> | 
-Search tag <form action="showallbytag.php" method="get" style="display: inline"><input name="tagname" size="8"> keyword <input name="keyword" size="12">
+Search
+<form action="showallbytag.php" method="get" style="display: inline">
+    <input name="keyword" size="12">
+    tag <input name="tagname" size="8">
 
     month:
     <select name="month">
@@ -44,7 +47,7 @@ Search tag <form action="showallbytag.php" method="get" style="display: inline">
 
     year:
     <select name="year">
-        <option value="0">any</option>
+        <option value="0">this yr</option>
         <option value="2017">2017</option>
         <option value="2018">2018</option>
         <option value="2019">2019</option>
