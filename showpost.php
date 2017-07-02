@@ -35,7 +35,7 @@ if ($page < 0 || !is_int($page)) {
   $page = 0;
 }
 
-$numperpage = 2;
+$numperpage = 3;
 $start = $page * $numperpage;
 
 echo "<h3>$tagname_get</h3>";
@@ -99,69 +99,10 @@ if (isset($_GET['month']) and isset($_GET['year'])) {
 
 // echo("Dates: $date_start_sql to $date_end_sql <br><br>");
 
-$getPosts_sth = $dbh->prepare("SELECT id, date_format(date, '%d %b %Y') as date_fmt, date, user, title, content, tags, dayname(date) as wkday FROM `post` WHERE `tags` LIKE :tagname AND (`title` LIKE :keyword OR `content` LIKE :keyword) AND date >= :date_start AND date < :date_end ORDER BY `date` DESC LIMIT $start, $numperpage");
-$getPosts_sth->bindParam(':tagname', $tagname);
-$getPosts_sth->bindParam(':keyword', $keyword);
-$getPosts_sth->bindParam(':date_start', $date_start_sql);
-$getPosts_sth->bindParam(':date_end', $date_end_sql);
+$getPosts_sth = $dbh->prepare("SELECT id, date_format(date, '%d %b %Y') as date_fmt, date, user, title, content, tags, dayname(date) as wkday FROM `post` WHERE id = :id");
+$getPosts_sth->bindParam(':id', $_GET['id']);
 $getPosts_sth->execute();
 $getPosts_result = $getPosts_sth->fetchAll();
-
-$prevPage = $page - 1;
-$nextPage = $page + 1;
-
-// count total pages
-
-$countPosts_sth = $dbh->prepare("SELECT COUNT(*) as ct FROM `post` WHERE `tags` LIKE :tagname AND (`title` LIKE :keyword OR `content` LIKE :keyword) AND date >= :date_start AND date < :date_end");
-$countPosts_sth->bindParam(':tagname', $tagname);
-$countPosts_sth->bindParam(':keyword', $keyword);
-$countPosts_sth->bindParam(':date_start', $date_start_sql);
-$countPosts_sth->bindParam(':date_end', $date_end_sql);
-$countPosts_sth->execute();
-$countPosts_result = $countPosts_sth->fetch();
-$totalPosts = $countPosts_result['ct'];
-
-
-$currentPage = $page;
-
-$totalPages = ceil($totalPosts / $numperpage);
-
-$numPageLinks = 5;
-$pagination = "";
-
-$showParams = "showallbytag.php?tagname=$tagname_get&keyword=$keyword_get&month=$mo_raw&year=$yr_raw";
-
-if ($currentPage > 0) {
-    $pagination .= "<a href=\"$showParams&page=0\">Newest</a>&nbsp;";
-    $pagination .= "<a href=\"$showParams&page=$prevPage\">Prev</a>&nbsp;";
-} else {
-    $pagination .= "Newest Prev ";
-}
-
-$leftmostPage = max(0, $currentPage - $numPageLinks);
-for ($i = $leftmostPage; $i < $currentPage; $i++) {
-    $pagination .= "<a href=\"$showParams&page=$i\">" . ($i + 1) . "</a>&nbsp;";
-}
-
-$pagination .= "<span class='underline'>" . ($currentPage + 1) . "</span>";
-
-$rightmostPage = min($totalPages, $currentPage + $numPageLinks + 1);
-
-for ($i = $currentPage + 1; $i < $rightmostPage; $i++) {
-  $pagination .= "&nbsp;<a href='$showParams&page=$i'>" . ($i + 1) . "</a>";
-}
-
-if ($currentPage < $totalPages - 1) {
-  $pagination .= "&nbsp;<a href='$showParams&page=$nextPage'>Next</a>";
-  $pagination .= "&nbsp;<a href='$showParams&page=" . ($totalPages - 1) . "'>Oldest</a>";
-} else {
-  $pagination .= "&nbsp;Next Oldest";
-    
-}
-// $pagination = "&lt; <a href=\"showallbytag.php?tagname=$tagname_get&keyword=$keyword_get&page=$prevPage&month=$mo_raw&year=$yr_raw\">Prev page</a> | <a href=\"showallbytag.php?tagname=$tagname_get&keyword=$keyword_get&page=$nextPage&month=$mo_raw&year=$yr_raw\">Next page</a> &gt;";
-
-echo $pagination;
-echo "<br><br>";
 
 foreach($getPosts_result as $row) {
   $rowTags = explode("|", $row['tags']);
@@ -185,7 +126,5 @@ foreach($getPosts_result as $row) {
 EOD;
 
 }
-
-echo $pagination;
 
 ?>

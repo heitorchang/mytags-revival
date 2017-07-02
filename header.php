@@ -5,6 +5,8 @@
         <title>mytags</title>
         <style type="text/css">
          .posttitle { font-family: Trebuchet MS, Arial, sans-serif; font-weight: bold; background-color: #cff; padding: 5px; }
+
+         .postlink { font-family: Trebuchet MS, Arial, sans-serif; font-weight: bold; background-color: #fcc; padding: 5px; }
          .tags { font-family: Arial, sans-serif; }
 
          a {
@@ -16,8 +18,8 @@
              text-decoration: none;
              margin-right: 4px;
              box-shadow: 2px 3px 2px 2px
-             rgba(0,0,0,0.19), 0 3px 3px
-             rgba(0,0,0,0.23);
+             rgba(0,0,0,0.09), 0 3px 3px
+             rgba(0,0,0,0.15);
          }
 
          .taglink_all { 
@@ -26,6 +28,10 @@
 
          .date { font-family: sans-serif; font-size: 14px; }
          .date_sm { font-family: sans-serif; font-size: 12px; }
+
+         .underline { color: #FFF; background-color: #009; padding: 4px; }
+         
+         
          .header { position: fixed; top: 0px; background-color: #fff; }
         </style>
         <script type="text/javascript" src="jquery.js"></script>
@@ -37,11 +43,12 @@
     </head>
     <body>
         <div class="header">
-            <a href="addform.php">New post</a> | 
+            <a href="addform.php">New</a> | 
+            <a href="listbytitle.php">By Title</a> | 
             <a href="showallbytag.php">All posts</a> |
-            <a href="tags.php">All tags</a> | 
+            <a href="tags.php">Tags</a> | 
             Search
-            <form action="showallbytag.php" method="get" style="display: inline">
+            <form action="listbytitle.php" method="get" style="display: inline">
                 <input name="keyword" size="12">
                 tag <input name="tagname" size="8">
 

@@ -35,7 +35,7 @@ if ($page < 0 || !is_int($page)) {
   $page = 0;
 }
 
-$numperpage = 2;
+$numperpage = 7;
 $start = $page * $numperpage;
 
 echo "<h3>$tagname_get</h3>";
@@ -99,7 +99,7 @@ if (isset($_GET['month']) and isset($_GET['year'])) {
 
 // echo("Dates: $date_start_sql to $date_end_sql <br><br>");
 
-$getPosts_sth = $dbh->prepare("SELECT id, date_format(date, '%d %b %Y') as date_fmt, date, user, title, content, tags, dayname(date) as wkday FROM `post` WHERE `tags` LIKE :tagname AND (`title` LIKE :keyword OR `content` LIKE :keyword) AND date >= :date_start AND date < :date_end ORDER BY `date` DESC LIMIT $start, $numperpage");
+$getPosts_sth = $dbh->prepare("SELECT id, date_format(date, '%d %b %Y') as date_fmt, date, user, title, tags, dayname(date) as wkday FROM `post` WHERE `tags` LIKE :tagname AND (`title` LIKE :keyword OR `content` LIKE :keyword) AND date >= :date_start AND date < :date_end ORDER BY `date` DESC LIMIT $start, $numperpage");
 $getPosts_sth->bindParam(':tagname', $tagname);
 $getPosts_sth->bindParam(':keyword', $keyword);
 $getPosts_sth->bindParam(':date_start', $date_start_sql);
@@ -129,7 +129,7 @@ $totalPages = ceil($totalPosts / $numperpage);
 $numPageLinks = 5;
 $pagination = "";
 
-$showParams = "showallbytag.php?tagname=$tagname_get&keyword=$keyword_get&month=$mo_raw&year=$yr_raw";
+$showParams = "listbytitle.php?tagname=$tagname_get&keyword=$keyword_get&month=$mo_raw&year=$yr_raw";
 
 if ($currentPage > 0) {
     $pagination .= "<a href=\"$showParams&page=0\">Newest</a>&nbsp;";
@@ -158,7 +158,6 @@ if ($currentPage < $totalPages - 1) {
   $pagination .= "&nbsp;Next Oldest";
     
 }
-// $pagination = "&lt; <a href=\"showallbytag.php?tagname=$tagname_get&keyword=$keyword_get&page=$prevPage&month=$mo_raw&year=$yr_raw\">Prev page</a> | <a href=\"showallbytag.php?tagname=$tagname_get&keyword=$keyword_get&page=$nextPage&month=$mo_raw&year=$yr_raw\">Next page</a> &gt;";
 
 echo $pagination;
 echo "<br><br>";
@@ -166,21 +165,22 @@ echo "<br><br>";
 foreach($getPosts_result as $row) {
   $rowTags = explode("|", $row['tags']);
   $tagLinks = "";
-  $contentWithLinks = replace_urls($row['content']);
   for($i = 1; $i < count($rowTags) - 1; $i++) {
-    $tagLinks .= '<a class="taglink" href="showallbytag.php?tagname=' . $rowTags[$i] . '">' . $rowTags[$i] . "</a> ";
+    $tagLinks .= '<a class="taglink" href="listbytitle.php?tagname=' . $rowTags[$i] . '">' . $rowTags[$i] . "</a> ";
   }
 
+    $short_wkday = substr($row['wkday'], 0, 3);
   echo <<<EOD
   <div>
 
-    <span class="date_sm">${row['wkday']}, ${row['date_fmt']}</span>
-<br><br>
-    <span class="posttitle">${row['title']}</span>
-    <a href="edit.php?id=${row['id']}">edit</a>
-    <pre>$contentWithLinks</pre>
+    <span class="date_sm">$short_wkday, ${row['date_fmt']}</span>
+
+<a href="showpost.php?id=${row['id']}" class="postlink">
+    ${row['title']}
+</a>
+&nbsp;
     $tagLinks
-    <br><br><hr>
+<br><br>
   </div>
 EOD;
 

@@ -34,6 +34,10 @@ for($i = 1; $i <= 5; $i++) {
 
 // echo $taglist;
 
+if ($taglist == "|") {
+    $taglist = "|untagged|";
+}
+
 // trim tags
 // convert tags to numbers
 
@@ -51,6 +55,8 @@ if(true) {
 
 $dbh = null;
 
-echo "Added " . $filtered;
+echo "Added " . $_POST['title'];
+
+echo "<br><br>" . $filtered;
 
 ?>
