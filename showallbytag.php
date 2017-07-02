@@ -119,14 +119,16 @@ foreach($getPosts_result as $row) {
   $tagLinks = "";
   $contentWithLinks = replace_urls($row['content']);
   for($i = 1; $i < count($rowTags) - 1; $i++) {
-    $tagLinks .= '[<a class="taglink" href="showallbytag.php?tagname=' . $rowTags[$i] . '">' . $rowTags[$i] . "</a>] ";
+    $tagLinks .= '<a class="taglink" href="showallbytag.php?tagname=' . $rowTags[$i] . '">' . $rowTags[$i] . "</a> ";
   }
 
   echo <<<EOD
   <div>
+
+    <span class="date_sm">${row['wkday']}, ${row['date_fmt']}</span>
+<br><br>
     <span class="posttitle">${row['title']}</span>
     <a href="edit.php?id=${row['id']}">edit</a>
-    <span class="date">${row['wkday']}, ${row['date_fmt']}</span>
     <pre>$contentWithLinks</pre>
     $tagLinks
     <br><br><hr>
