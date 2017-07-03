@@ -52,15 +52,15 @@
     <body>
         <div class="header">
             <a href="addform.php">New</a> | 
-            <a href="listbytitle.php">By Title</a> | 
-            <a href="showallbytag.php">All posts</a> |
+            <a href="listbytitle.php">Titles</a> | 
+            <a href="showallbytag.php">Details</a> |
             <a href="tags.php">Tags</a> | 
             Search
             <form action="listbytitle.php" method="get" style="display: inline">
                 <input name="keyword" size="12">
                 tag <input name="tagname" size="8">
 
-                month:
+                Date:
                 <select name="month">
                     <option value="0">any</option>
                     <option value="1">Jan</option>
@@ -77,7 +77,6 @@
                     <option value="12">Dec</option>
                 </select>
 
-                year:
                 <select name="year">
                     <option value="0">this yr</option>
                     <option value="2017">2017</option>
