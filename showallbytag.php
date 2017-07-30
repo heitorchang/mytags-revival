@@ -138,6 +138,14 @@ if ($currentPage > 0) {
     $pagination .= "Newest Prev ";
 }
 
+// insert "fixed location" Next
+if ($currentPage < $totalPages - 1) {
+  $pagination .= "<a href='$showParams&page=$nextPage'>Next</a> ";
+} else {
+  $pagination .= "Next ";    
+}
+
+
 $leftmostPage = max(0, $currentPage - $numPageLinks);
 for ($i = $leftmostPage; $i < $currentPage; $i++) {
     $pagination .= "<a href=\"$showParams&page=$i\">" . ($i + 1) . "</a>&nbsp;";
