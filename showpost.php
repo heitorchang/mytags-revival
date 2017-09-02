@@ -35,6 +35,21 @@ if ($page < 0 || !is_int($page)) {
   $page = 0;
 }
 
+// prev and next id numbers
+$prevId = (int)$_GET['id'] - 1;
+$nextId = (int)$_GET['id'] + 1;
+
+echo <<<EOD
+  <div>
+
+<!-- prev/next post id links -->
+
+<a href="showpost.php?id=$nextId">Newer</a> 
+|
+<a href="showpost.php?id=$prevId">Older</a>
+</div>
+EOD;
+
 $numperpage = 3;
 $start = $page * $numperpage;
 
@@ -112,9 +127,9 @@ foreach($getPosts_result as $row) {
     $tagLinks .= '<a class="taglink" href="showallbytag.php?tagname=' . $rowTags[$i] . '">' . $rowTags[$i] . "</a> ";
   }
 
+    
   echo <<<EOD
   <div>
-
     <span class="date_sm">${row['wkday']}, ${row['date_fmt']}</span>
 <br><br>
     <span class="posttitle">${row['title']}</span>

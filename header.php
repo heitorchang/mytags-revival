@@ -53,7 +53,7 @@
         <div class="header">
             <a href="addform.php">New</a> | 
             <a href="listbytitle.php">Titles</a> | 
-            <a href="showallbytag.php">Details</a> |
+            <!-- <a href="showallbytag.php">Details</a> | -->
             <a href="tags.php">Tags</a> | 
             Search
             <form action="listbytitle.php" method="get" style="display: inline">
