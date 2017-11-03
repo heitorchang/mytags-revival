@@ -124,7 +124,7 @@ foreach($getPosts_result as $row) {
   $tagLinks = "";
   $contentWithLinks = replace_urls($row['content']);
   for($i = 1; $i < count($rowTags) - 1; $i++) {
-    $tagLinks .= '<a class="taglink" href="showallbytag.php?tagname=' . $rowTags[$i] . '">' . $rowTags[$i] . "</a> ";
+    $tagLinks .= '<a class="taglink" href="listbytitle.php?tagname=' . $rowTags[$i] . '">' . $rowTags[$i] . "</a> ";
   }
 
     
