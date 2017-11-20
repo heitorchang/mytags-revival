@@ -48,6 +48,7 @@ if(true) {
 
 $dbh = null;
 
+echo "<br>&lt; <a href='showpost.php?id={$_POST['id']}'>Back to post</a><br><br>";
 
 echo "Saved new content: " . $new_content;
 echo "<br><br>";
