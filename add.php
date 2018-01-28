@@ -1,6 +1,6 @@
 <?php
 
-include "header.php";
+// include "header.php";
 include "db.php";
 
 $tag_stmt = "SELECT * FROM `tag`";
@@ -58,8 +58,11 @@ if(true) {
 
 $dbh = null;
 
-echo "Added " . $_POST['title'];
+// echo "Added " . $_POST['title'];
 
-echo "<br><br>" . $filtered;
+// echo "<br><br>" . $filtered;
+
+header('Location: listbytitle.php');
+
 
 ?>

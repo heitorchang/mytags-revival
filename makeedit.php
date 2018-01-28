@@ -1,6 +1,6 @@
 <?php
 
-include "header.php";
+// include "header.php";
 include "db.php";
 
 $tag_stmt = "SELECT * FROM `tag`";
@@ -48,11 +48,13 @@ if(true) {
 
 $dbh = null;
 
-echo "<br>&lt; <a href='showpost.php?id={$_POST['id']}'>Back to post</a><br><br>";
+// echo "<br>&lt; <a href='showpost.php?id={$_POST['id']}'>Back to post</a><br><br>";
 
-echo "Saved new content: " . $new_content;
-echo "<br><br>";
-echo str_replace("|", " ", $taglist);
+// echo "Saved new content: " . $new_content;
+// echo "<br><br>";
+// echo str_replace("|", " ", $taglist);
+
+header("Location: showpost.php?id={$_POST['id']}");
 
 
 ?>
