@@ -46,7 +46,8 @@ if(true) {
 //  $add_stmt = $dbh->prepare("INSERT INTO post (date, user, title, content, tags) VALUES (NOW(), :user, :title, :content, :tags)");
     $add_stmt = $dbh->prepare("INSERT INTO post (date, user, title, content, tags) VALUES (:date, :user, :title, :content, :tags)");
     $dateStr = date("Y-m-d H:i:s");
-    $add_stmt->bindParam(":date", $dateStr);
+    // $add_stmt->bindParam(":date", $dateStr);
+    $add_stmt->bindParam(":date", $_POST['when']);
   $add_stmt->bindParam(':user', $_POST['user']);
   $add_stmt->bindParam(':title', $_POST['title']);
     $filtered = htmlspecialchars($_POST['content'], ENT_QUOTES);
