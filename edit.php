@@ -26,7 +26,7 @@ foreach($getPost_result as $row) {
       <input type="hidden" name="id" value="$postId">
       <b>Edit post</b> Author: <input name="user" value="1" readonly><br>
       Title: <input name="title" size="80" value="${row['title']}"><br>
-      <textarea name="content" rows="18" cols="80">${row['content']}</textarea>
+      <textarea name="content" rows="25" cols="80">${row['content']}</textarea>
       <br>
       Tags: (all lowercase)<br>
       <input name="tag1" value="$tags[0]"><br>

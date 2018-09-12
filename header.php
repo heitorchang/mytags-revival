@@ -55,7 +55,7 @@
             <a href="listbytitle.php">Titles</a> | 
             <!-- <a href="showallbytag.php">Details</a> | -->
             <a href="tags.php">Tags</a> | 
-            <a href="showpost.php?id=1">Goals</a> | 
+            <a href="showpost.php?id=1">To-do List</a> | 
             Search
             <form action="listbytitle.php" method="get" style="display: inline">
                 <input name="keyword" size="12">
