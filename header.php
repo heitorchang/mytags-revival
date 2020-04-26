@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>mytags</title>
         <style type="text/css">
          .posttitle { font-family: Trebuchet MS, Arial, sans-serif; font-weight: bold; background-color: #cff; padding: 5px; }
