@@ -40,7 +40,7 @@ $prevId = (int)$_GET['id'] - 1;
 $nextId = (int)$_GET['id'] + 1;
 
 echo <<<EOD
-  <div>
+  <div style="margin-top: 15px;">
 
 <!-- prev/next post id links -->
 
