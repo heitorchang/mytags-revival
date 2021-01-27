@@ -1,0 +1,5 @@
+AuthType Basic
+AuthName "Crystal"
+AuthBasicProvider file
+AuthUserFile "/fs7e/crystal/protected/.htpasswd"
+Require valid-user

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>mytags</title>
         <style type="text/css">
          .posttitle { font-family: Trebuchet MS, Arial, sans-serif; font-weight: bold; background-color: #cff; padding: 5px; }
@@ -13,7 +14,7 @@
              text-decoration: none;
          }
 
-         .taglink { font-family: Tahoma, sans-serif; font-size: 14px; background-color: #ff9; padding: 8px;
+         .taglink { font-family: Tahoma, sans-serif; font-size: 14px; background-color: #ff9; padding: 5px; margin: 6px;
              display: inline-block;
              text-decoration: none;
              margin-right: 4px;

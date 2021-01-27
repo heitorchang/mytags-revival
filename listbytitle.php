@@ -35,7 +35,7 @@ if ($page < 0 || !is_int($page)) {
   $page = 0;
 }
 
-$numperpage = 7;
+$numperpage = 12;
 $start = $page * $numperpage;
 
 echo "<h3>$tagname_get</h3>";
@@ -77,7 +77,7 @@ if (isset($_GET['month']) and isset($_GET['year'])) {
         $mo_end = $mo_start + 1;
         $yr_end = $yr_start;
     } else if ($mo_start == 12) {
-        $yr_end += 1;
+        $yr_end = $yr_start + 1;
         $mo_end = 1;
     } else {
         $yr_end = $yr_start;
@@ -187,12 +187,14 @@ foreach($getPosts_result as $row) {
 </a>
 &nbsp;
     $tagLinks
-<br><br>
+<br>
   </div>
 EOD;
 
 }
 
+echo "<br>";
 echo $pagination;
 
+echo "<br><br><br><br><br><br>";
 ?>
