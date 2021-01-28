@@ -7,8 +7,8 @@ include "header.php";
     <form action="add.php" method="post">
       Author: <input name="user" value="1" readonly><br><br>
         When: <input id="whenInput" name="when"><br><br>
-      Title: <input name="title" size="72" autofocus><br><br>
-      <textarea name="content" rows="15" cols="80"></textarea>
+      Title: <input name="title" size="40" autofocus><br><br>
+      <textarea name="content" rows="15" cols="45"></textarea>
       <br><br>
       Tags: (all lowercase)<br>
       <input name="tag1"><br>
