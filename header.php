@@ -33,7 +33,7 @@
          .underline { color: #FFF; background-color: #009; padding: 4px; }
          
          
-         .header { position: fixed; top: 0px; background-color: #fff; }
+         .header { position: fixed; top: 12px; left: 6px; background-color: #fff; font-size: 1.4em; }
 
          pre {
              font-family: sans-serif;
@@ -56,7 +56,6 @@
             <a href="listbytitle.php">Titles</a> | 
             <!-- <a href="showallbytag.php">Details</a> | -->
             <a href="tags.php">Tags</a> | 
-            <a href="showpost.php?id=1">To-do List</a> | 
             Search
             <form action="listbytitle.php" method="get" style="display: inline">
                 <input name="keyword" size="12">
@@ -90,6 +89,9 @@
                     <option value="2023">2023</option>		
                     <option value="2024">2024</option>
                     <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
 		</select>
 
                 <input type="submit" value="go">
@@ -99,7 +101,7 @@
             <i>utf-8 mode</i>
             -->
         </div>
-        <br>
+        <br><br><br><br>
 
 <?php
 
