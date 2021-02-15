@@ -33,7 +33,7 @@
          .underline { color: #FFF; background-color: #009; padding: 4px; }
          
          
-         .header { position: fixed; top: 12px; left: 6px; background-color: #fff; font-size: 1.4em; }
+         .header { position: fixed; top: 0; left: 0; background-color: #eff; font-size: 1.4em; padding-top: 12px; padding-left: 6px; }
 
          pre {
              font-family: sans-serif;
