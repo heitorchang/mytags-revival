@@ -7,14 +7,15 @@
         <style type="text/css">
          .posttitle { font-family: Trebuchet MS, Arial, sans-serif; font-weight: bold; background-color: #cff; padding: 5px; }
 
-         .postlink { font-family: Trebuchet MS, Arial, sans-serif; font-weight: bold; background-color: #fcc; padding: 5px; }
+         .postlink { font-family: Trebuchet MS, Arial, sans-serif; font-weight: bold; background-color: #fcc; padding: 9px; margin: 4px; }
          .tags { font-family: Arial, sans-serif; }
 
          a {
              text-decoration: none;
          }
 
-         .taglink { font-family: Tahoma, sans-serif; font-size: 14px; background-color: #ff9; padding: 5px; margin: 6px;
+         .taglink { font-family: Tahoma, sans-serif; font-size: 14px; background-color: #ff9; padding: 5px; margin: 4px;
+             border-radius: 8px;
              display: inline-block;
              text-decoration: none;
              margin-right: 4px;
