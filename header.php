@@ -29,7 +29,7 @@
          }
 
          .date { font-family: sans-serif; font-size: 14px; }
-         .date_sm { font-family: sans-serif; font-size: 12px; }
+         .date_sm { font-family: monospace; font-size: 12px; }
 
          .underline { color: #FFF; background-color: #009; padding: 4px; }
          
