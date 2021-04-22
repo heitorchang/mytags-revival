@@ -7,7 +7,7 @@
         <style type="text/css">
          .posttitle { font-family: Trebuchet MS, Arial, sans-serif; font-weight: bold; background-color: #cff; padding: 5px; }
 
-         .postlink { font-family: Trebuchet MS, Arial, sans-serif; font-weight: bold; background-color: #fcc; padding: 9px; margin: 4px; }
+         .postlink { font-family: Trebuchet MS, Arial, sans-serif; font-weight: bold; background-color: #cef; padding: 9px; margin: 4px; }
          .tags { font-family: Arial, sans-serif; }
 
          a {
