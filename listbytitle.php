@@ -99,7 +99,7 @@ if (isset($_GET['month']) and isset($_GET['year'])) {
 
 // echo("Dates: $date_start_sql to $date_end_sql <br><br>");
 
-$getPosts_sth = $dbh->prepare("SELECT id, date_format(date, '%d %b %Y') as date_fmt, date, user, title, tags, dayname(date) as wkday FROM `post` WHERE `tags` LIKE :tagname AND (`title` LIKE :keyword OR `content` LIKE :keyword) AND date >= :date_start AND date < :date_end ORDER BY `date` DESC LIMIT $start, $numperpage");
+$getPosts_sth = $dbh->prepare("SELECT id, date_format(date, '%d %b %Y') as date_fmt, date, user, title, length(content) as clen, tags, dayname(date) as wkday FROM `post` WHERE `tags` LIKE :tagname AND (`title` LIKE :keyword OR `content` LIKE :keyword) AND date >= :date_start AND date < :date_end ORDER BY `date` DESC LIMIT $start, $numperpage");
 $getPosts_sth->bindParam(':tagname', $tagname);
 $getPosts_sth->bindParam(':keyword', $keyword);
 $getPosts_sth->bindParam(':date_start', $date_start_sql);
@@ -171,6 +171,10 @@ echo "<br><br>";
 
 foreach($getPosts_result as $row) {
   $rowTags = explode("|", $row['tags']);
+  $contentEmpty = "";
+  if ($row['clen'] == 0) {
+    $contentEmpty = "empty";
+  }
   $tagLinks = "";
   for($i = 1; $i < count($rowTags) - 1; $i++) {
     $tagLinks .= '<a class="taglink" href="listbytitle.php?tagname=' . $rowTags[$i] . '">' . $rowTags[$i] . "</a> ";
@@ -182,7 +186,7 @@ foreach($getPosts_result as $row) {
 
     <span class="date_sm">$short_wkday, ${row['date_fmt']}</span>
 
-<a href="showpost.php?id=${row['id']}" class="postlink">
+<a href="showpost.php?id=${row['id']}" class="postlink $contentEmpty">
     ${row['title']}
 </a>
 &nbsp;

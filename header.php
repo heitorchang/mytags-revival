@@ -7,7 +7,8 @@
         <style type="text/css">
          .posttitle { font-family: Trebuchet MS, Arial, sans-serif; font-weight: bold; background-color: #cff; padding: 5px; }
 
-         .postlink { font-family: Trebuchet MS, Arial, sans-serif; font-weight: bold; background-color: #cef; padding: 9px; margin: 4px; }
+         .postlink { font-family: Trebuchet MS, Arial, sans-serif; font-weight: bold; background-color: #fff; padding: 3px 0 3px 3px; margin: 4px 0 4px 4px;}
+ 	 .empty { font-family: Trebuchet MS, Arial, sans-serif; background-color: #ddf; font-style: italic;}
          .tags { font-family: Arial, sans-serif; }
 
          a {
@@ -18,7 +19,6 @@
              border-radius: 8px;
              display: inline-block;
              text-decoration: none;
-             margin-right: 4px;
              box-shadow: 2px 3px 2px 2px
              rgba(0,0,0,0.09), 0 3px 3px
              rgba(0,0,0,0.15);
