@@ -38,7 +38,7 @@
 
          pre {
              font-family: sans-serif;
-             font-size: 1.6em;
+             font-size: 1.3em;
              padding: 1em;
              border-radius: 0.8em;
              white-space: pre-wrap;
