@@ -5,8 +5,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>mytags</title>
         <style type="text/css">
-         .posttitle { font-family: Trebuchet MS, Arial, sans-serif; font-size: 1.6em; background-color: #cff; padding: 5px; }
-         .postlink { font-family: Trebuchet MS, Arial, sans-serif; font-size: 1.6em; padding: 3px 0 3px 3px; margin: 4px 0 4px 4px;}
+         .posttitle { font-family: Trebuchet MS, Arial, sans-serif; font-size: 1.2em; background-color: #cff; padding: 5px; }
+         .postlink { font-family: Trebuchet MS, Arial, sans-serif; font-size: 1.2em; padding: 3px 0 3px 3px; margin: 4px 0 4px 4px;}
  	 .empty { font-family: Trebuchet MS, Arial, sans-serif; background-color: #ddf; font-style: italic;}
          .tags { font-family: Arial, sans-serif; }
 
@@ -34,11 +34,11 @@
          .underline { color: #FFF; background-color: #009; padding: 4px; }
          
          
-         .header { position: fixed; top: 0; left: 0; background-color: #eff; font-size: 1.4em; padding-top: 12px; padding-left: 6px; }
+         .header { position: fixed; top: 0; left: 0; background-color: #eff; font-size: 1.1em; padding-top: 12px; padding-left: 6px; }
 
          pre {
              font-family: sans-serif;
-             font-size: 1.3em;
+             font-size: 1.1em;
              padding: 1em;
              border-radius: 0.8em;
              white-space: pre-wrap;
