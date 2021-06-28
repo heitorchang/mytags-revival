@@ -14,3 +14,5 @@ foreach($getTags_result as $row) {
   }
   echo '<a class="taglink taglink_all" href="listbytitle.php?tagname=' . $row['name'] . '">' . $row['name'] . "</a> ";
 }
+
+echo '<br><br><br>';
